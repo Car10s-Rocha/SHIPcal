@@ -6,8 +6,8 @@ Created on Sat Jan  5 17:49:37 2019
 @author: miguel
 """
 import numpy as np
-import numpy_financial
-
+import numpy_financial as nmpy
+ 
 
 def SP_plant_costFunctions(n_coll,integration,alm,fluid):  
     #This function calculates the cost of 
@@ -108,8 +108,8 @@ def Turn_key(Energy_anual,Fuel_price,Boiler_eff,n_years_sim,Investment,OM_cost_y
             fuelPrizeArray[i]=(Fuel_price*(1+incremento)**(i-1))
 
     LCOE=sum(num_LCOE)/sum(denom_LCOE)#Funcion objetivo
-    IRR10=100*numpy_financial.irr(FCF[:10])#Internal rate of return
-    IRR=100*numpy_financial.irr(FCF)
+    IRR10=100*nmpy.irr(FCF[:10])#Internal rate of return
+    IRR=100*nmpy.irr(FCF)
     Amort_year=(Acum_FCF <= 0).sum()
     return [LCOE,IRR,IRR10,Amort_year,Acum_FCF,FCF,Energy_savings,OM_cost,fuelPrizeArray,Net_anual_savings]
     
@@ -155,7 +155,7 @@ def ESCO(priceReduction,Energy_anual,Fuel_price,Boiler_eff,n_years_sim,Investmen
             FCF[i]=Net_anual_savings[i]
             fuelPrizeArray[i]=(Fuel_price*(1+incremento)**(i-1))
 
-    IRR10=100*numpy_financial.irr(FCF[:10])
-    IRR=100*numpy_financial.irr(FCF)
+    IRR10=100*nmpy.irr(FCF[:10])
+    IRR=100*nmpy.irr(FCF)
     Amort_year=(Acum_FCF <= 0).sum()
     return [IRR,IRR10,Amort_year,Acum_FCF,FCF,BenefitESCO,OM_cost,fuelPrizeArray,Energy_savings,Net_anual_savings]
