@@ -1648,7 +1648,7 @@ def SHIPcal(origin,inputsDjango,plots,imageQlty,confReport,modificators,desginDi
 #Plot Control ---------------------------------------
 imageQlty=200
 
-plots=[0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] # Put 1 in the elements you want to plot. Example [1,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0] will plot only plots #0, #8 and #9
+plots=[0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0] # Put 1 in the elements you want to plot. Example [1,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0] will plot only plots #0, #8 and #9
 #(0) A- Sankey plot
 #(1) A- Production week Winter & Summer
 #(2) A- Plot Finance
